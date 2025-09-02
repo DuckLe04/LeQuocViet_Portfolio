@@ -200,3 +200,24 @@
     justify-content: flex-end;
     align-items: center;
 } */
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    height: auto;
+  }
+  .hero-content_1,
+  .hero-content_2 {
+    width: 100%;
+    height: auto;
+  }
+  .hero-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .Preview-video {
+    width: 100%;
+    height: auto;
+    left: 0;
+  }
+}

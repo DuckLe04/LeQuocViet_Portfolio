@@ -50,3 +50,9 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+@media (max-width: 768px) {
+  .skills-grid {
+    width: 100%;
+    padding-left: 0;
+  }
+}
