@@ -48,7 +48,7 @@
                     </iframe>
                     <h2>THE LOST REMINISCCENE</h2>
                     <p>Game Puzzle Storytelling linear with 3 map Tutorial, Dungeon, BossPoint.</p>
-                    <h4>Responsibilities</h4>
+                    <h4>My Role</h4>
                         <li>System save/load local, Player Controller.</li>
                         <li>Simulates Book model for UI Menu, Optimization Perfomance Scene Load.</li>
                     <h4>Technology</h4>
@@ -94,8 +94,8 @@
                     <ul class="skill-list">
                         <li>Frameworks & Engines: Unity Engine.
                             Mono, .NET Standard, IL2CPP.</li>
-                        <li>Programming: C# (.NET), OOP, SOLID, Generic.</li>
-                        <li>Design & Architecture: Singleton, StateMachine Pattern, Observer
+                        <li>C# (.NET), async/await.</li>
+                        <li>Design & Architecture: OOP, SOLID. Singleton, StateMachine Pattern, Observer
                             Pattern , Factory/Abstract Factory Patterns.
                             Data-Driven Design, Component-Based Design.</li>
                         <li>Systems: Gameplay Systems: Event System,
@@ -104,9 +104,8 @@
                             Optimization: Object Pooling, Profiling.</li>
                         <li>Tools & Version Control: Git, Unity Package Manager, Build Pipeline
                             (PC/Mobile).</li>
-                        <li>Basic Knowledge: async/await.
-                            Networking: Photon Pun, Photon Fusion.
-                            GC Optimization ,Memory Management.</li>
+                        <li>Basic Knowledge: Generic. Photon Pun, Photon Fusion.
+                            GC Optimization ,Memory Management</li>
                     </ul>
                 </div>
             </div>
@@ -123,9 +122,16 @@
         </div>
         <div class="projects-container">
             <div class="project-card">
+
+                
+
                 <iframe class="project-video"
                     src="https://www.youtube.com/embed/X8BGi_DiW9k?autoplay=1&mute=1&loop=1&playlist=X8BGi_DiW9k"
-                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+                </iframe>
+                <div class="project-role">
+                    <p>My Role: làm gì đó</p>
+                </div>
                 <p class="project-name">Dự án 1</p>
                 <p class="project-description">Coop game 2 players go fight skeletons and carnivorous plant bosses to
                     protect their village.</p>
@@ -139,14 +145,17 @@
                     <button class="next-btn">&gt;</button>
                 </div>
                 <a href="https://github.com/DuckLe04/Game_Online" target="_blank">
-                    <button class="btn-project-detail">GitHub</button>
+                    <button class="btn-project-detail">This Page</button>
                 </a>
             </div>
             <div class="project-card">
                 <iframe class="project-video"
                     src="https://www.youtube.com/embed/-gEtwJ0SVlo?autoplay=1&mute=1&loop=1&playlist=-gEtwJ0SVlo"
                     frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                <p class="project-name">Dự án 2</p>
+                                <div class="project-role">
+                    <p>My Role: làm gì đó</p>
+                </div>
+                    <p class="project-name">Dự án 2</p>
                 <p class="project-description">Find a way to escape the dungeon, collect relic pieces to awaken the assistant, destroy the goblin guarding the tomb..</p>
                 <div class="image-project-review">
                     <button class="prev-btn">&lt;</button>
@@ -165,7 +174,10 @@
                 <iframe class="project-video"
                     src="https://www.youtube.com/embed/5CUrPdeCvGQ?autoplay=1&mute=1&loop=1&playlist=5CUrPdeCvGQ"
                     frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                <p class="project-name">Dự án 3</p>
+                                <div class="project-role">
+                    <p>My Role: làm gì đó</p>
+                </div>
+                    <p class="project-name">Dự án 3</p>
                 <p class="project-description">Dự án 3 sử dụng công nasdfasdfasfasdfasfasfasdfasdfasdfghệ tiên tiến.</p>
                 <div class="image-project-review">
                     <button class="prev-btn">&lt;</button>
@@ -181,6 +193,44 @@
             </div>
         </div>
     </section>
+
+    <!-- Popup Overlay -->
+<!-- Popup chung -->
+<div id="project-popup" class="popup-overlay hidden">
+  <div class="popup-box">
+    <div class="popup-header">
+      <a href="#" target="_blank" class="btn-github">GitHub</a>
+      <h2 class="popup-title"></h2>
+      <div class="popup-actions">
+        <button class="btn-download">Download</button>
+        <button class="btn-close">&times;</button>
+      </div>
+    </div>
+
+    <div class="popup-info">
+      <div class="info-box">
+        <h3>Mô tả</h3>
+        <p class="popup-desc"></p>
+      </div>
+      <div class="info-box">
+        <h3>Công nghệ</h3>
+        <ul class="popup-tech"></ul>
+      </div>
+      <div class="info-box">
+        <h3>My Role</h3>
+        <ul class="popup-role"></ul>
+      </div>
+    </div>
+
+    <div class="popup-media">
+      <div class="popup-video-wrapper">
+        <iframe class="popup-video" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+      <div class="popup-images"></div>
+    </div>
+  </div>
+</div>
+
 
     <!-- Skills -->
     <!-- <section id="skills" class="skills">

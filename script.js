@@ -53,3 +53,21 @@ document.querySelectorAll('.project-card').forEach(card => {
         });
     }
 });
+
+// Lấy phần tử
+const popup = document.getElementById('project-popup');
+const btns = document.querySelectorAll('.btn-project-detail');
+const closeBtn = document.querySelector('.btn-close');
+
+// Khi nhấn nút "This Page"
+btns.forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    popup.classList.remove('hidden');
+  });
+});
+
+// Đóng popup
+closeBtn.addEventListener('click', () => {
+  popup.classList.add('hidden');
+});
