@@ -80,18 +80,17 @@
     transition: background-color 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
     font-weight: bold;
-    font-size: 1.125rem;
+    font-size: 1rem;
     scale: 1;
-    transition: transform 0.3s ease-out, color 0.3s ease-out, background-color 0.3s ease-out;
+  transition: all 0.35s ease-in-out; /* gom lại, mượt hơn */
 
 }
 
 .btn-cv:hover {
-    background-color: #623100;
-    scale: 0.98;
-    transition: transform 0.3s ease-out, color 0.3s ease-out, background-color 0.3s ease-out;
-    box-shadow: 0px 0 50px rgba(255, 255, 255, 0.5);
-    color: #ffffff;
+  background-color: #000000;
+  color: #ffffff;
+  transform: scale(1.1);            /* scale mượt */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
 
 }
 

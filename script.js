@@ -54,20 +54,88 @@ document.querySelectorAll('.project-card').forEach(card => {
     }
 });
 
-// Lấy phần tử
-const popup = document.getElementById('project-popup');
-const btns = document.querySelectorAll('.btn-project-detail');
-const closeBtn = document.querySelector('.btn-close');
 
-// Khi nhấn nút "This Page"
-btns.forEach(btn => {
-  btn.addEventListener('click', (e) => {
+
+
+
+// project card và project pupup
+const popup = document.getElementById('project-popup');
+const closeBtn = popup.querySelector('.btn-close');
+const titleEl = popup.querySelector('.popup-title');
+const descEl = popup.querySelector('.popup-desc');
+const techEl = popup.querySelector('.popup-tech');
+const roleEl = popup.querySelector('.popup-role');
+const videoEl = popup.querySelector('.popup-video');
+const imagesEl = popup.querySelector('.popup-images');
+const githubBtn = popup.querySelector('.btn-github');
+
+                // phần project card
+document.querySelectorAll('.project-card').forEach(card => {
+
+  // Video
+  const iframe = document.createElement('iframe');
+  iframe.className = 'project-video';
+  iframe.src = card.dataset.video;
+  iframe.setAttribute('frameborder', '0');
+  iframe.setAttribute('allow', 'autoplay; encrypted-media');
+  iframe.setAttribute('allowfullscreen', true);
+  card.prepend(iframe); // Cho video đứng đầu card
+
+  // Tạo tên dự án
+  let name = document.createElement('p');
+  name.className = 'project-name';
+  name.textContent = card.dataset.title;
+  card.appendChild(name);
+
+  // Tạo mô tả
+  let desc = document.createElement('p');
+  desc.className = 'project-description';
+  desc.textContent = card.dataset.desc;
+  card.appendChild(desc);
+
+  // Tạo role (lấy phần tử đầu tiên trong data-role)
+  let role = document.createElement('div');
+  role.className = 'project-role';
+  let roles = JSON.parse(card.dataset.role);
+  role.innerHTML = `<p>My Role: ${roles[0]}</p>`;
+  card.appendChild(role);
+});
+
+            // phần project pupup
+document.querySelectorAll('.btn-project-detail').forEach(btn => {
+  btn.addEventListener('click', e => {
     e.preventDefault();
+    const card = btn.closest('.project-card');
+
+    // Fill data
+    titleEl.textContent = card.dataset.title;
+    descEl.textContent = card.dataset.desc;
+
+    techEl.innerHTML = "";
+    JSON.parse(card.dataset.tech).forEach(t => {
+      techEl.innerHTML += `<li>${t}</li>`;
+    });
+
+    roleEl.innerHTML = "";
+    JSON.parse(card.dataset.role).forEach(r => {
+      roleEl.innerHTML += `<li>${r}</li>`;
+    });
+
+    videoEl.src = card.dataset.video;
+
+    imagesEl.innerHTML = "";
+    JSON.parse(card.dataset.images).forEach(img => {
+      imagesEl.innerHTML += `<img src="${img}" alt="Screenshot">`;
+    });
+
+    githubBtn.href = card.dataset.github;
+
     popup.classList.remove('hidden');
   });
 });
 
-// Đóng popup
 closeBtn.addEventListener('click', () => {
   popup.classList.add('hidden');
+  videoEl.src = ""; // reset video
 });
+

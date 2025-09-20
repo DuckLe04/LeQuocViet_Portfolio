@@ -56,6 +56,7 @@
     /* box-shadow: 0 4px 8px rgba(145, 145, 145, 0.5); */
     /* box-shadow: 0 0 16px rgba(145, 145, 145, 0.5); */
 
+    /* align-items: center; */
     display: flex;
     flex-direction: column;   /* chia card thành 2 cột dọc */
     width: 485px;
@@ -115,7 +116,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #1f2937;
+    /* background-color: #1f2937; */
     color: #ffdd99;
     font-size: 1rem;
     /* font-weight: bold; */
@@ -137,8 +138,8 @@
     transform: translate(-50%, -50%);
     font-size: 1.25rem;
     font-weight: bold;
-    color: #ffffff;
-    background-color: #0e1217;
+   color: #ffdd99;
+    /* background-color: #0e1217; */
     padding: 100% 100%;
     border-radius: 5px;
     opacity: 0;
@@ -213,25 +214,27 @@
 }
 
 .btn-project-detail {
-    position: absolute;
-    width: 65%;
-    left: 50%;
-    bottom: 2%;
-    transform: translateX(-50%);
-    background-color: #8a3900;
-    color: #ffffff;
-    justify-content: center;
-    align-items: center;
-    align-self: flex-start;
-    padding: 10px 20px;
-    border: none;
-    opacity: 0;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    /* box-shadow: 0px 0 50px rgb(255, 255, 255); */
-    font-weight: bold;
-    font-size: 1.125rem;
+  position: absolute;
+  bottom: 20px;
+  left: 25%;
+  width: 50%;
+  opacity: 0;
+  background-color: #8a3900;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+    z-index: 10;
+  transition: all 0.35s ease
+}
+
+.btn-project-detail:hover{
+  background-color: #000000;
+  color: #ffffff;
+  transform: scale(1.1);            /* scale mượt */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
 
 }
 
@@ -241,7 +244,7 @@
 
 .btn-see-more {
     background-color: #8a3900;
-    color: #dddddd;
+  color: #fff;
     justify-content: center;
     align-items: center;
     align-self: flex-start;
@@ -252,18 +255,20 @@
     transition: background-color 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
     font-weight: bold;
-    font-size: 1.125rem;
     scale: 1;
-    transition: transform 0.3s ease-out, color 0.3s ease-out, background-color 0.3s ease-out;
+  border: none;
+  font-size: 1rem;
+  border-radius: 4px;
+  transition: all 0.35s ease-in-out; /* gom lại, mượt hơn */
 
 }
 
 .btn-see-more:hover {
-    background-color: #623100;
-    scale: 0.98;
-    transition: transform 0.3s ease-out, color 0.3s ease-out, background-color 0.3s ease-out;
-    box-shadow: 0px 0 20px rgb(255, 255, 255);
-    color: #ffffff;
+  background-color: #000000;
+  color: #ffffff;
+  transform: scale(1.1);            /* scale mượt */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+
 }
 
 .hidden {
@@ -303,6 +308,9 @@
 
 
 
+
+
+
 /* Overlay */
 .popup-overlay {
   position: fixed;
@@ -338,12 +346,38 @@
 .popup-title { flex: 1; text-align: center; font-size: 1.5rem; }
 .popup-actions { display: flex; gap: 0.5rem; }
 .btn-github, .btn-download, .btn-close {
-  background: #8a3900; color: #fff;
-  border: none; padding: 0.5rem 1rem;
-  cursor: pointer; border-radius: 4px;
-  text-decoration: none; font-weight: bold;
+  background-color: #8a3900;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: all 0.35s ease-in-out; /* gom lại, mượt hơn */
 }
 .btn-close { font-size: 1.5rem; line-height: 1; }
+
+.btn-download:hover {
+  background-color: #000000;
+  color: #ffffff;
+  transform: scale(1.1);            /* scale mượt */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+.btn-github:hover{
+  background-color: #000000;
+  color: #ffffff;
+  transform: scale(1.1);            /* scale mượt */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+.btn-close:hover{
+  background-color: #000000;
+  color: #ffffff;
+  transform: scale(1.1);            /* scale mượt */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
 
 /* Info section */
 .popup-info {
@@ -356,22 +390,29 @@
 .info-box h3 { margin-top: 0; color: #ffdd99; }
 
 /* Media section */
-.popup-video {
+.popup-video-wrapper {
   position: relative;
   width: 100%;
-  padding-top: 56.25%;  /* 16:9 ratio */
+  padding-top: 56.25%;   /* 16:9 ratio */
   border-radius: 6px;
   overflow: hidden;
+  margin-bottom: 1rem;
 }
-.popup-video iframe {
+
+.popup-video-wrapper iframe {
   position: absolute;
   top: 0; left: 0;
   width: 100%;
   height: 100%;
+  border: none;
 }
+
 .popup-images {
-  display: flex; gap: 1rem; flex-wrap: wrap;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
+
 .popup-images img {
   width: calc(33.3% - 1rem);
   border-radius: 6px;
