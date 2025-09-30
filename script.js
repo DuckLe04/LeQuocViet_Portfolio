@@ -5,22 +5,10 @@ document.querySelectorAll('.nav-link, .btn-cv, .btn-see-more, .btn-project-detai
             e.preventDefault();
             const targetId = link.getAttribute('href').substring(1);
             document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
-        // } else if (link.classList.contains('project-card')) {
-        //     e.preventDefault();
-        //     const projectId = link.querySelector('.project-video')?.getAttribute('data-project') || link.querySelector('.project-name').textContent;
-        //     alert(`Chuyển đến trang chi tiết của ${projectId}`);
         } else if (link.classList.contains('btn-see-more')) {
             e.preventDefault();
             window.location.href = 'all-projects.html'; // Chuyển đến trang tất cả dự án
         } 
-        // else if (link.classList.contains('btn-project-detail')) {
-        //     e.preventDefault();
-        //     const projectId = link.closest('.project-card').querySelector('.project-name').textContent;
-        //     window.location.href = `project-detail.html?id=${projectId}`; // Chuyển đến trang chi tiết dự án
-        // } 
-        // else {
-        //     alert('Chức năng này chưa được triển khai!');
-        // }
     });
 });
 
@@ -55,9 +43,6 @@ document.querySelectorAll('.project-card').forEach(card => {
 });
 
 
-
-
-
 // project card và project pupup
 const popup = document.getElementById('project-popup');
 const closeBtn = popup.querySelector('.btn-close');
@@ -69,7 +54,7 @@ const videoEl = popup.querySelector('.popup-video');
 const imagesEl = popup.querySelector('.popup-images');
 const githubBtn = popup.querySelector('.btn-github');
 
-                // phần project card
+  // phần project card
 document.querySelectorAll('.project-card').forEach(card => {
 
   // Video
@@ -93,15 +78,33 @@ document.querySelectorAll('.project-card').forEach(card => {
   desc.textContent = card.dataset.desc;
   card.appendChild(desc);
 
-  // Tạo role (lấy phần tử đầu tiên trong data-role)
-  let role = document.createElement('div');
-  role.className = 'project-role';
-  let roles = JSON.parse(card.dataset.role);
-  role.innerHTML = `<p>My Role: ${roles[0]}</p>`;
-  card.appendChild(role);
+// Tạo role container
+let role = document.createElement('div');
+role.className = 'project-role';
+
+let roles = JSON.parse(card.dataset.role);
+
+// Tạo tiêu đề
+let title = document.createElement('p');
+title.textContent = "My Role:";
+
+// Tạo danh sách <ul>
+let ul = document.createElement('ul');
+roles.forEach(r => {
+  ul.innerHTML += `<li>${r}</li>`;
 });
 
-            // phần project pupup
+// Gắn tiêu đề và danh sách vào role
+role.appendChild(title);
+role.appendChild(ul);
+
+// Gắn role vào card
+card.appendChild(role);
+
+
+});
+
+  // phần project pupup
 document.querySelectorAll('.btn-project-detail').forEach(btn => {
   btn.addEventListener('click', e => {
     e.preventDefault();

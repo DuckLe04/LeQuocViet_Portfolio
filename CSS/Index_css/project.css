@@ -53,10 +53,6 @@
 
 .project-card {
     box-shadow: 0 0px 8px 4px rgba(0, 0, 0, 0.5);
-    /* box-shadow: 0 4px 8px rgba(145, 145, 145, 0.5); */
-    /* box-shadow: 0 0 16px rgba(145, 145, 145, 0.5); */
-
-    /* align-items: center; */
     display: flex;
     flex-direction: column;   /* chia card thành 2 cột dọc */
     width: 485px;
@@ -76,10 +72,6 @@
     /* Giữ đồng bộ thời gian */
 }
 
-/* Khi hover project-card thì hiện My Role */
-.project-card:hover .project-role {
-    opacity: 1;
-}
 
 /* Bọc video trong 1 khung giữ tỉ lệ */
 .popup-video-wrapper {
@@ -111,17 +103,35 @@
 
 /* Nửa dưới My Role */
 .project-role {
-    flex: 1;                 /* chiếm 50% */
-    /* height: 50%; */
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: #1f2937; */
+    transform: translate(-0%, 0%); /* bắt đầu từ ngoài khung, phía dưới */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* thêm hiệu ứng di chuyển + mờ dần */
+    flex-direction: column; /* Sắp xếp con theo cột */
     color: #ffdd99;
     font-size: 1rem;
-    /* font-weight: bold; */
     text-align: center;
     padding: 10px;
+}
+
+.project-card:hover .project-role {
+  transform: translate(-00%, -50%); /* vào giữa */
+    opacity: 1;
+}
+
+.project-role p {
+  margin: 0 0 4px 0; /* cách dưới một chút */
+  font-weight: bold; /* làm nổi bật */
+}
+
+.project-role ul {
+  color: #ffffff;
+  list-style-position: inside; /* dấu chấm nằm trong khung */
+  padding-left: 0;            /* bỏ padding mặc định */
+  margin-left: 0;             /* bỏ margin mặc định */
+  text-align: left;           /* căn chữ về trái */
 }
 
 .project-card:hover .project-video {
